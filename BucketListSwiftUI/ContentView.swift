@@ -19,7 +19,9 @@ struct ContentView: View {
         User(firstName: "Mark", lastName: "Boo"),
         User(firstName: "Johnny", lastName: "Cage"),
         User(firstName: "Tom", lastName: "Han")
-    ]
+    ].sorted {
+        $0.lastName < $1.lastName
+    }
     
     var body: some View {
         List(users) { user in
